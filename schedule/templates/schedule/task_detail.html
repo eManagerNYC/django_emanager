@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'schedule_task_list' %}">
+    task Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>estimated_end</td><td>{{ object.estimated_end }}</td></tr>
+    <tr><td>actual_start</td><td>{{ object.actual_start }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>task_name</td><td>{{ object.task_name }}</td></tr>
+    <tr><td>task_duration</td><td>{{ object.task_duration }}</td></tr>
+    <tr><td>actual_end</td><td>{{ object.actual_end }}</td></tr>
+    <tr><td>estimated_start</td><td>{{ object.estimated_start }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

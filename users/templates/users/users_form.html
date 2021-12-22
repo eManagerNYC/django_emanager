@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'users_users_list' %}">
+    users Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="useremail">useremail: </label>
+  <input class="form-control col-sm-10" id="useremail" type="text" name="useremail" value="{{ object.useremail }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="username">username: </label>
+  <input class="form-control col-sm-10" id="username" type="text" name="username" value="{{ object.username }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="password">password: </label>
+  <input class="form-control col-sm-10" id="password" type="text" name="password" value="{{ object.password }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

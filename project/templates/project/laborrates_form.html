@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'project_laborrates_list' %}">
+    laborrates Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="labor_cost">labor_cost: </label>
+  <input class="form-control col-sm-10" id="labor_cost" type="text" name="labor_cost" value="{{ object.labor_cost }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="labor_affiliation">labor_affiliation: </label>
+  <input class="form-control col-sm-10" id="labor_affiliation" type="text" name="labor_affiliation" value="{{ object.labor_affiliation }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="labor_name">labor_name: </label>
+  <input class="form-control col-sm-10" id="labor_name" type="text" name="labor_name" value="{{ object.labor_name }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

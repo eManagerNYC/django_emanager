@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'cost_budget_list' %}">
+    budget Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="line_code">line_code: </label>
+  <input class="form-control col-sm-10" id="line_code" type="text" name="line_code" value="{{ object.line_code }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="line_amount">line_amount: </label>
+  <input class="form-control col-sm-10" id="line_amount" type="text" name="line_amount" value="{{ object.line_amount }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="line_description">line_description: </label>
+  <input class="form-control col-sm-10" id="line_description" type="text" name="line_description" value="{{ object.line_description }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

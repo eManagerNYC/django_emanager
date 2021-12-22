@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>cost</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cost_changeorder_list' %}">changeorder Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cost_ticket_list' %}">ticket Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cost_contracts_list' %}">contracts Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cost_requisition_list' %}">requisition Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cost_budget_list' %}">budget Listing</a></div>
+<div class="m-2"><h4>reports</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'reports_reports_list' %}">reports Listing</a></div>
+<div class="m-2"><h4>schedule</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'schedule_schedule_list' %}">schedule Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'schedule_task_list' %}">task Listing</a></div>
+<div class="m-2"><h4>field</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'field_dailyreport_list' %}">dailyreport Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'field_punchlist_list' %}">punchlist Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'field_checklists_list' %}">checklists Listing</a></div>
+<div class="m-2"><h4>engineering</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'engineering_submittal_pkg_list' %}">submittal_pkg Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'engineering_rfi_list' %}">rfi Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'engineering_submittal_list' %}">submittal Listing</a></div>
+<div class="m-2"><h4>users</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'users_users_list' %}">users Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'users_roles_list' %}">roles Listing</a></div>
+<div class="m-2"><h4>project</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'project_company_list' %}">company Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'project_projects_list' %}">projects Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'project_reports_list' %}">reports Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'project_laborrates_list' %}">laborrates Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'project_materialrates_list' %}">materialrates Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'project_equipmentrates_list' %}">equipmentrates Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'project_divisions_list' %}">divisions Listing</a></div>
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'engineering_rfi_list' %}">
+    rfi Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>status</td><td>{{ object.status }}</td></tr>
+    <tr><td>rfi_question</td><td>{{ object.rfi_question }}</td></tr>
+    <tr><td>duedate</td><td>{{ object.duedate }}</td></tr>
+    <tr><td>rfi_number</td><td>{{ object.rfi_number }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>rfi_answer</td><td>{{ object.rfi_answer }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

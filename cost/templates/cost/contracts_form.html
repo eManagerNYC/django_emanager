@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'cost_contracts_list' %}">
+    contracts Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="contract_description">contract_description: </label>
+  <input class="form-control col-sm-10" id="contract_description" type="text" name="contract_description" value="{{ object.contract_description }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="attachment">attachment: </label>
+  <input class="form-control col-sm-10" id="attachment" type="text" name="attachment" value="{{ object.attachment }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="contract_file">contract_file: </label>
+  <input class="form-control col-sm-10" id="contract_file" type="file" name="contract_file" value="{{ object.contract_file }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="scheduleofvalues">scheduleofvalues: </label>
+  <input class="form-control col-sm-10" id="scheduleofvalues" type="text" name="scheduleofvalues" value="{{ object.scheduleofvalues }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="contract_type">contract_type: </label>
+  <input class="form-control col-sm-10" id="contract_type" type="text" name="contract_type" value="{{ object.contract_type }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="exclusion_assumption">exclusion_assumption: </label>
+  <input class="form-control col-sm-10" id="exclusion_assumption" type="text" name="exclusion_assumption" value="{{ object.exclusion_assumption }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

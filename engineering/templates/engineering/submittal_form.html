@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'engineering_submittal_list' %}">
+    submittal Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="status">status: </label>
+  <input class="form-control col-sm-10" id="status" type="text" name="status" value="{{ object.status }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="submittal_file">submittal_file: </label>
+  <input class="form-control col-sm-10" id="submittal_file" type="file" name="submittal_file" value="{{ object.submittal_file }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="submittal_name">submittal_name: </label>
+  <input class="form-control col-sm-10" id="submittal_name" type="text" name="submittal_name" value="{{ object.submittal_name }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="duedate">duedate: </label>
+  <input class="form-control col-sm-10" id="duedate" type="date" name="duedate" value="{{ object.duedate }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="submittal_number">submittal_number: </label>
+  <input class="form-control col-sm-10" id="submittal_number" type="text" name="submittal_number" value="{{ object.submittal_number }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'cost_requisition_list' %}">
+    requisition Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="req_number">req_number: </label>
+  <input class="form-control col-sm-10" id="req_number" type="text" name="req_number" value="{{ object.req_number }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="req_amount">req_amount: </label>
+  <input class="form-control col-sm-10" id="req_amount" type="text" name="req_amount" value="{{ object.req_amount }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="coi">coi: </label>
+  <input class="form-control col-sm-10" id="coi" type="text" name="coi" value="{{ object.coi }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="stored_materials">stored_materials: </label>
+  <input class="form-control col-sm-10" id="stored_materials" type="text" name="stored_materials" value="{{ object.stored_materials }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="prev_amount">prev_amount: </label>
+  <input class="form-control col-sm-10" id="prev_amount" type="text" name="prev_amount" value="{{ object.prev_amount }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="lienwaiver">lienwaiver: </label>
+  <input class="form-control col-sm-10" id="lienwaiver" type="text" name="lienwaiver" value="{{ object.lienwaiver }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

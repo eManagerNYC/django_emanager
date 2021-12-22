@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'schedule_task_list' %}">
+    task Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="estimated_end">estimated_end: </label>
+  <input class="form-control col-sm-10" id="estimated_end" type="date" name="estimated_end" value="{{ object.estimated_end }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="actual_start">actual_start: </label>
+  <input class="form-control col-sm-10" id="actual_start" type="date" name="actual_start" value="{{ object.actual_start }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="created">created: </label>
+  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="task_name">task_name: </label>
+  <input class="form-control col-sm-10" id="task_name" type="text" name="task_name" value="{{ object.task_name }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="task_duration">task_duration: </label>
+  <input class="form-control col-sm-10" id="task_duration" type="number" name="task_duration" value="{{ object.task_duration }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="actual_end">actual_end: </label>
+  <input class="form-control col-sm-10" id="actual_end" type="date" name="actual_end" value="{{ object.actual_end }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="estimated_start">estimated_start: </label>
+  <input class="form-control col-sm-10" id="estimated_start" type="date" name="estimated_start" value="{{ object.estimated_start }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

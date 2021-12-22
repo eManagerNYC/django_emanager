@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'cost_changeorder_list' %}">
+    changeorder Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>backup</td><td>{{ object.backup }}</td></tr>
+    <tr><td>total_labor</td><td>{{ object.total_labor }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>status</td><td>{{ object.status }}</td></tr>
+    <tr><td>exclusion_assumption</td><td>{{ object.exclusion_assumption }}</td></tr>
+    <tr><td>total_material</td><td>{{ object.total_material }}</td></tr>
+    <tr><td>total_equipment</td><td>{{ object.total_equipment }}</td></tr>
+    <tr><td>change_amt</td><td>{{ object.change_amt }}</td></tr>
+    <tr><td>work_scope</td><td>{{ object.work_scope }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
